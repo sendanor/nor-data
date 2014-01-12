@@ -1,6 +1,6 @@
 {
   "name": "nor-data",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helpers for dealing with JavaScript data",
   "main": "src/index.js",
   "scripts": {
