@@ -1,0 +1,39 @@
+{
+  "name": "nor-data",
+  "version": "0.0.1",
+  "description": "Helpers for dealing with JavaScript data",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test-spec",
+    "test-dot": "mocha -u bdd -c -R dot tests/test-*.js",
+    "test-list": "mocha -u bdd -c -R list tests/test-*.js",
+    "test-spec": "mocha -u bdd -c -R spec tests/test-*.js",
+    "test-progress": "mocha -u bdd -c -R progress tests/test-*.js",
+    "test-min": "mocha -u bdd -c -R min tests/test-*.js",
+    "test-markdown": "mocha -u bdd -c -R markdown tests/test-*.js",
+    "build-tests.md": "npm run test-markdown > tests.md",
+	"lint": "node-lint src/ --config=lint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Sendanor/nor-data.git"
+  },
+  "keywords": [
+    "data",
+    "json",
+    "object",
+    "copy"
+  ],
+  "devDependencies": {
+    "lint": "*",
+    "mocha": "*",
+    "nor-is": "*",
+    "nor-debug": "*"
+  },
+  "author": "Jaakko-Heikki Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sendanor/nor-data/issues"
+  },
+  "homepage": "https://github.com/Sendanor/nor-data"
+}
