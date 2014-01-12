@@ -127,6 +127,25 @@ describe("Let's make sure that... require('data')", function(){
 
 		}); // End of 'can copy an booleans!'
 
+		it('cannot copy functions!', function data_copy_can_copy_functions(){
+
+			function test_functions(obj, what_to_expect) {
+				var obj2 = data.copy(obj);
+
+				function test_them(o) {
+					debug.assert(o).typeOf('undefined').equals( what_to_expect );
+					return test_them;
+				}
+
+				test_them(obj2);
+
+				return test_functions;
+			}
+
+			test_functions(function() { }, undefined);
+
+		}); // End of 'can copy an functions!'
+
 	}); // End of '.copy()'
 
 }); // Enf of "Let's make sure that... require('data')"
