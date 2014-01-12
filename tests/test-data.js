@@ -108,7 +108,7 @@ describe("Let's make sure that... require('data')", function(){
 
 		}); // End of 'can copy an null!'
 
-		it('can copy a booleans!', function data_copy_can_copy_booleans(){
+		it('can copy booleans!', function data_copy_can_copy_booleans(){
 
 			function test_booleans(obj) {
 				var obj2 = data.copy(obj);
