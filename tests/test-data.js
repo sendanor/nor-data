@@ -148,6 +148,35 @@ describe("Let's make sure that... require('data')", function(){
 
 	}); // End of '.copy()'
 
+	/* .object() */
+
+	describe('.object()', function data_object_test(){
+
+		it('is callable!', function data_object_is_callable(){
+			debug.assert(data.object).is('function');
+		}); // End of 'is callable!'
+
+		it('has working .map()!', function data_object_has_working_map(){
+
+			function toupper(x) {
+				return x.toUpperCase();
+			}
+
+			var obj = {"foo":"bar", "hello": "world"};
+			var obj2 = data.object(obj).map(toupper);
+
+			debug.assert(obj).typeOf('object');
+			debug.assert(obj.foo).is('string').equals("bar");
+			debug.assert(obj.hello).is('string').equals("world");
+
+			debug.assert(obj2).typeOf('object');
+			debug.assert(obj2.foo).is('string').equals("BAR");
+			debug.assert(obj2.hello).is('string').equals("WORLD");
+
+		}); // End of 'has working .map()!'
+
+	}); // End of .object()
+
 }); // Enf of "Let's make sure that... require('data')"
 
 /* EOF */
