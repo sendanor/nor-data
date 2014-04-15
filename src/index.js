@@ -15,6 +15,29 @@ data.copy = function(o) {
 	return JSON.parse( JSON.stringify(o) );
 };
 
+/** */
+data.copy2 = function(o) {
+	var tmp;
+
+	if(is.func(o) || is.boolean(o) || is.string(o) || is.number(o) || is.undefined(o) || is.nul(o)) {
+		return o;
+	}
+
+	if(is.array(o)) {
+		return o.map(data.copy2);
+	}
+
+	if(is.obj(o)) {
+		tmp = {};
+		Object.keys(o).forEach(function(key) {
+			tmp[key] = data.copy2(o[key]);
+		});
+		return tmp;
+	}
+
+	throw new TypeError("Unsupported variable type for nor-data.copy2(): " + (typeof o));
+};
+
 /** Operations on plain objects */
 data.object = function(data) {
 	debug.assert(data).is('object');
