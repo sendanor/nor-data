@@ -1,7 +1,10 @@
 /* nor-data -- Main file */
 
+"use strict";
+
 var is = require('nor-is');
 var debug = require('nor-debug');
+var ARRAY = require('nor-array');
 
 var data = module.exports = {};
 
@@ -16,7 +19,7 @@ data.copy = function(o) {
 };
 
 /** */
-data.copy2 = function(o) {
+data.copy2 = function nor_data_copy2(o) {
 	var tmp;
 
 	if(is.func(o) || is.boolean(o) || is.string(o) || is.number(o) || is.undefined(o) || is.nul(o)) {
@@ -24,12 +27,12 @@ data.copy2 = function(o) {
 	}
 
 	if(is.array(o)) {
-		return o.map(data.copy2);
+		return ARRAY(o).map(nor_data_copy2).valueOf();
 	}
 
 	if(is.obj(o)) {
 		tmp = {};
-		Object.keys(o).forEach(function(key) {
+		ARRAY(Object.keys(o)).forEach(function(key) {
 			tmp[key] = data.copy2(o[key]);
 		});
 		return tmp;
@@ -48,7 +51,7 @@ data.object = function(data) {
 	function object_map(f) {
 		debug.assert(f).is('function');
 		var obj = {};
-		Object.keys(data).forEach(function(key) {
+		ARRAY(Object.keys(data)).forEach(function(key) {
 			obj[key] = f(data[key], key, data);
 		});
 		return obj;

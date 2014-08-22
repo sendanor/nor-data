@@ -1,6 +1,6 @@
 {
   "name": "nor-data",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Helpers for dealing with JavaScript data",
   "main": "src/index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "test-min": "mocha -u bdd -c -R min tests/test-*.js",
     "test-markdown": "mocha -u bdd -c -R markdown tests/test-*.js",
     "build-tests.md": "npm run test-markdown > tests.md",
-	"lint": "node-lint src/ --config=lint.json"
+	"lint": "node-lint src/ --config=lint.json",
+	"jshint": "jshint src/"
   },
   "repository": {
     "type": "git",
@@ -26,12 +27,14 @@
   ],
   "dependencies": {
     "nor-is"    : ">= 0.1.13 < 0.2.0",
-    "nor-debug" : ">= 0.1.38 < 0.2.0"
+    "nor-debug" : ">= 0.1.38 < 0.2.0",
+    "nor-array" : ">= 0.1.1  < 0.2.0"
   },
   "devDependencies": {
-    "lint": "*",
-    "mocha": "*",
-    "vows": "*"
+    "lint"    : "*",
+    "mocha"   : "*",
+    "vows"    : "*",
+    "jshint"  : "*"
   },
   "author": "Jaakko-Heikki Heusala <jheusala@iki.fi>",
   "license": "MIT",
