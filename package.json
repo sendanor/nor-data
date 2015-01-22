@@ -1,6 +1,6 @@
 {
   "name": "nor-data",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Helpers for dealing with JavaScript data",
   "main": "src/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "nor-is"    : ">= 0.1.16 < 0.2.0",
-    "nor-debug" : ">= 0.1.49 < 0.2.0",
+    "nor-debug" : ">= 0.1.52 < 0.2.0",
     "nor-array" : ">= 0.1.7  < 0.2.0"
   },
   "devDependencies": {
