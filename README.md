@@ -38,3 +38,8 @@ npm install -d
 npm run lint
 npm run test
 ```
+
+Commercial Support
+------------------
+
+You can buy commercial support from [Sendanor](http://sendanor.com/software).
