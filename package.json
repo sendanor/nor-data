@@ -1,6 +1,6 @@
 {
   "name": "nor-data",
-  "version": "0.0.23",
+  "version": "1.0.0",
   "description": "Helpers for dealing with JavaScript data",
   "main": "src/index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "test-min": "mocha -u bdd -c -R min tests/test-*.js",
     "test-markdown": "mocha -u bdd -c -R markdown tests/test-*.js",
     "build-tests.md": "npm run test-markdown > tests.md",
-	"lint": "node-lint src/ --config=lint.json",
-	"jshint": "jshint src/"
+    "lint": "node-lint src/ --config=lint.json",
+    "jshint": "jshint src/"
   },
   "repository": {
     "type": "git",
